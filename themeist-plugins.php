@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: My Plugins by Themeist
- * Plugin URI: http://themeist.co
+ * Plugin URI: https://themeist.com
  * Description: Plugin CPT for plugin developers to display their plugins on their own website
- * Version: 0.1
+ * Version: 0.1.1
  * Author: Harish Chouhan
- * Author URI: http://themeist.co
+ * Author URI: https://themeist.com
  */
 
 class Themeist_Plugins {

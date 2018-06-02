@@ -21,7 +21,7 @@ function themeist_register_plugin_post_types() {
 			'menu_position' => 		5,
 
 			'labels' => array(
-				'name' => 		'My Plugins',
+				'name' => 		'Plugins',
 				'singular_name' => 	'Plugin',
 				'menu_name' => 		'My Plugins',
 				'add_new' => 		'Add New',

@@ -41,6 +41,12 @@ function themeist_plugins_display_plugin_info_meta_box( $object, $box ) { ?>
 	<input type="hidden" name="themeist-plugin-info-meta-box" value="<?php echo wp_create_nonce( basename( __FILE__ ) ); ?>" />
 
 	<p>
+		<label for="plugin-wordpress-slug">Slug</label>
+		<br />
+		<input type="text" name="plugin-wordpress-slug" id="plugin-wordpress-slug" value="<?php echo esc_attr( get_post_meta( $object->ID, 'plugin_wordpress_slug', true ) ); ?>" size="30" tabindex="30" style="width: 99%;" />
+	</p>
+
+	<p>
 		<label for="plugin-version">Version</label>
 		<br />
 		<input type="text" name="plugin-version" id="plugin-version" value="<?php echo esc_attr( get_post_meta( $object->ID, 'plugin_version_number', true ) ); ?>" size="30" tabindex="30" style="width: 99%;" />
@@ -54,6 +60,11 @@ function themeist_plugins_display_plugin_info_meta_box( $object, $box ) { ?>
 		<label for="plugin-repo-link">Repository URL</label>
 		<br />
 		<input type="text" name="plugin-repo-link" id="plugin-repo-link" value="<?php echo esc_attr( get_post_meta( $object->ID, 'plugin_repo_url', true ) ); ?>" size="30" tabindex="30" style="width: 99%;" />
+	</p>
+	<p>
+		<label for="plugin-support-link">Support URL</label>
+		<br />
+		<input type="text" name="plugin-support-link" id="plugin-support-link" value="<?php echo esc_attr( get_post_meta( $object->ID, 'plugin_support_link', true ) ); ?>" size="30" tabindex="30" style="width: 99%;" />
 	</p>
 <?php }
 
@@ -74,9 +85,11 @@ function themeist_plugins_save_plugin_info_meta_box( $post_id, $post ) {
 		return $post_id;
 
 	$meta = array(
+		'plugin_wordpress_slug' => esc_attr( strip_tags( $_POST['plugin-wordpress-slug'] ) ),
 		'plugin_download_url' => esc_attr( strip_tags( $_POST['plugin-download-link'] ) ),
 		'plugin_repo_url' => esc_url( strip_tags( $_POST['plugin-repo-link'] ) ),
 		'plugin_version_number' => strip_tags( $_POST['plugin-version'] ),
+		'plugin_support_link' => strip_tags( $_POST['plugin-support-link'] ),
 	);
 
 	foreach ( $meta as $meta_key => $new_meta_value ) {

@@ -3,7 +3,7 @@
  * Plugin Name: My Plugins by Themeist
  * Plugin URI: https://themeist.com
  * Description: Plugin CPT for plugin developers to display their plugins on their own website
- * Version: 0.1.1
+ * Version: 0.1.2
  * Author: Harish Chouhan
  * Author URI: https://themeist.com
  */
